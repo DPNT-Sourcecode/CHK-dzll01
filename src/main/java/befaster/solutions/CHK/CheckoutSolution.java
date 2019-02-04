@@ -6,6 +6,9 @@ public class CheckoutSolution {
     public Integer checkout(String skus) {
     	
         int total =0;
+        // change string to char and create map with no of occurence
+        
+        Map<String, Long> frenquency
         switch (skus) {
         case "" :
         	total=0;
@@ -29,3 +32,4 @@ public class CheckoutSolution {
         return total;
     }
 }
+
