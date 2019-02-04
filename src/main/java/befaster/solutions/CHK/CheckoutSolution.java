@@ -22,8 +22,13 @@ public class CheckoutSolution {
         	total=0;
         	break;
         case "A" :
+        	if(entry.getValue()<5) {
         	total+=entry.getValue()%3*50;
         	total+=entry.getValue()/3*130;
+        	}else {
+        	total+=entry.getValue()%5*200;
+        	total+=entry.getValue()/5*200;
+        	}
         	break;
         case "B" :
         	total+=entry.getValue()%2*30;
@@ -34,6 +39,11 @@ public class CheckoutSolution {
         	break;
         case "D" :
         	total+=entry.getValue()*15;
+        	break;
+        case "E" :
+        	total+=entry.getValue()%2*40;
+        	total+=entry.getValue()/2*40;
+        	total+=entry.getValue()/2*30;
         	break;
         default :
         	total =-1;
@@ -46,3 +56,4 @@ public class CheckoutSolution {
      return total;
   }
 }
+
