@@ -4,6 +4,7 @@ package befaster.solutions.CHK;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
+    	
         int total =0;
         switch (skus) {
         case "" :
@@ -28,5 +29,6 @@ public class CheckoutSolution {
         return total;
     }
 }
+
 
 
