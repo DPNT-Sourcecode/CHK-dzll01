@@ -6,6 +6,9 @@ public class CheckoutSolution {
     public Integer checkout(String skus) {
         int total =0;
         switch (skus) {
+        case "" :
+        	total=0;
+        	break;
         case "A" :
         	total=50;
         	break;
@@ -16,7 +19,7 @@ public class CheckoutSolution {
         	total=20;
         	break;
         case "D" :
-        	total=10;
+        	total=15;
         	break;
         default :
         	total =-1;
@@ -25,4 +28,5 @@ public class CheckoutSolution {
         return total;
     }
 }
+
 
