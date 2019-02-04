@@ -26,7 +26,7 @@ public class CheckoutSolution {
         	total+=entry.getValue()%3*50;
         	total+=entry.getValue()/3*130;
         	}else {
-        	total+=entry.getValue()%5*200;
+        	total+=entry.getValue()%5*50;
         	total+=entry.getValue()/5*200;
         	}
         	break;
@@ -54,5 +54,6 @@ public class CheckoutSolution {
      return total;
   }
 }
+
 
 

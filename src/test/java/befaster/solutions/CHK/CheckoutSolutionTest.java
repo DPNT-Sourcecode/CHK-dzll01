@@ -57,5 +57,16 @@ public class CheckoutSolutionTest {
 	public void testSpecialOffersB() {
 		assertThat(checkout.checkout("BB"), equalTo(45));
 	}
+	
+	@Test
+	public void testSpecialOffersE() {
+		assertThat(checkout.checkout("EE"), equalTo(80));
+	}
+	@Test
+	public void testSpecialOffersA2() {
+		assertThat(checkout.checkout("AAAAAA"), equalTo(250));
+	}
+
 
 }
+
