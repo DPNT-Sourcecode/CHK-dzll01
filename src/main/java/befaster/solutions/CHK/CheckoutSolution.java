@@ -41,9 +41,7 @@ public class CheckoutSolution {
         	total+=entry.getValue()*15;
         	break;
         case "E" :
-        	total+=entry.getValue()%2*40;
-        	total+=entry.getValue()/2*40;
-        	total+=entry.getValue()/2*30;
+        	total+=entry.getValue()*40;
         	break;
         default :
         	total =-1;
@@ -56,4 +54,5 @@ public class CheckoutSolution {
      return total;
   }
 }
+
 
