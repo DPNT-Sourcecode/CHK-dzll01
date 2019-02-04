@@ -40,12 +40,12 @@ public class CheckoutSolutionTest {
 	}
 	
 	@Test
-	public void testOthersExample1() {
+	public void testIllegalInput1() {
 		assertThat(checkout.checkout("T"), equalTo(-1));
 	}
 	
 	@Test
-	public void testOthersExample2() {
+	public void testIllegalInput2() {
 		assertThat(checkout.checkout("Apple"), equalTo(-1));
 	}
 	@Test
@@ -59,4 +59,5 @@ public class CheckoutSolutionTest {
 	}
 
 }
+
 
