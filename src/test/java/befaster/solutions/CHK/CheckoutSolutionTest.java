@@ -48,5 +48,15 @@ public class CheckoutSolutionTest {
 	public void testOthersExample2() {
 		assertThat(checkout.checkout("Apple"), equalTo(-1));
 	}
+	@Test
+	public void testSpecialOffersA() {
+		assertThat(checkout.checkout("AAA"), equalTo(130));
+	}
+	
+	@Test
+	public void testSpecialOffersB() {
+		assertThat(checkout.checkout("BB"), equalTo(45));
+	}
 
 }
+
