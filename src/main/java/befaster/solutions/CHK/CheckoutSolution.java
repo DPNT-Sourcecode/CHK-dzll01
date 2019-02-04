@@ -23,11 +23,11 @@ public class CheckoutSolution {
         	break;
         case "A" :
         	total+=entry.getValue()%3*50;
-        	total+=entry.getValue()/3*50;
+        	total+=entry.getValue()/3*130;
         	break;
         case "B" :
         	total+=entry.getValue()%2*30;
-        	total+=entry.getValue()/2*30;
+        	total+=entry.getValue()/2*45;
         	break;
         case "C" :
         	total+=entry.getValue()*20;
@@ -46,4 +46,5 @@ public class CheckoutSolution {
      return total;
   }
 }
+
 
