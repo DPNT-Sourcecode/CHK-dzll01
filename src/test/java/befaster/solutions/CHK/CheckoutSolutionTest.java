@@ -115,7 +115,29 @@ public class CheckoutSolutionTest {
 	public void testSpecialOffersF6() {
 		assertThat(checkout.checkout("FFFFFFFF"), equalTo(60));
 	}
+	
+	@Test
+	public void testSpecialOffersH1() {
+		assertThat(checkout.checkout("HHHHH"), equalTo(45));
+	}
+	@Test
+	public void testSpecialOffersH2() {
+		assertThat(checkout.checkout("HHHHHHHHHH"), equalTo(80));
+	}
+	@Test
+	public void testSpecialOffersH3() {
+		assertThat(checkout.checkout("HHHHHH"), equalTo(55));
+	}
+	@Test
+	public void testSpecialOffersH4() {
+		assertThat(checkout.checkout("HHHH"), equalTo(40));
+	}
+	@Test
+	public void testSpecialOffersH5() {
+		assertThat(checkout.checkout("HHHHHHHHHHH"), equalTo(90));
+	}
 
 
 }
+
 

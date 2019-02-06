@@ -70,7 +70,7 @@ public class CheckoutSolution {
         	numFitemDic=5;
         	numSitemDic=10; 
         	numItem = entry.getValue().intValue();
-        	cost=50; 
+        	cost=10; 
         	firstCostDisc=45;
         	secondCostDisc=80;
         	total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
@@ -144,4 +144,5 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
 
