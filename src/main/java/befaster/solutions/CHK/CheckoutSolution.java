@@ -124,6 +124,14 @@ public class CheckoutSolution {
         	break;
         case "Q" :
         	numFitemDic=3;
+        	int numItemR =0;
+        	// check if the number of item N is not a null  
+        	if(frenquencyChars.get("R")!=null)
+        		numItemR = frenquencyChars.get("R").intValue()/numFitemDic;
+        	// check if number if item N is more than discount E
+        	numSitemDic=0; 
+        	numItem = (entry.getValue().intValue() - numItemR);
+        	numFitemDic=3;
         	numSitemDic=0; 
         	numItem = entry.getValue().intValue();
         	cost=30; 
@@ -174,3 +182,4 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
