@@ -59,12 +59,61 @@ public class CheckoutSolutionTest {
 	}
 	
 	@Test
-	public void testSpecialOffersE() {
+	public void testSpecialOffersE1() {
 		assertThat(checkout.checkout("EE"), equalTo(80));
 	}
 	@Test
 	public void testSpecialOffersA2() {
-		assertThat(checkout.checkout("AAAAAA"), equalTo(250));
+		assertThat(checkout.checkout("AAAAA"), equalTo(200));
+	}
+	
+	@Test
+	public void testSpecialOffersA3() {
+		assertThat(checkout.checkout("AAAAAAAA"), equalTo(330));
+	}
+	
+	@Test
+	public void testSpecialOffersE2() {
+		assertThat(checkout.checkout("EEB"), equalTo(80));
+	}
+	
+	@Test
+	public void testSpecialOffersE2_B() {
+		assertThat(checkout.checkout("EEBBB"), equalTo(125));
+	}
+	
+	@Test
+	public void testSpecialOffersE3_B() {
+		assertThat(checkout.checkout("EEBB"), equalTo(110));
+	}
+	
+	@Test
+	public void testSpecialOffersF1() {
+		assertThat(checkout.checkout("FF"), equalTo(20));
+	}
+	
+	@Test
+	public void testSpecialOffersF2() {
+		assertThat(checkout.checkout("FFF"), equalTo(20));
+	}
+	
+	@Test
+	public void testSpecialOffersF3() {
+		assertThat(checkout.checkout("FFFFFF"), equalTo(40));
+	}
+	@Test
+	public void testSpecialOffersF4() {
+		assertThat(checkout.checkout("FFFFFFF"), equalTo(50));
+	}
+	
+	@Test
+	public void testSpecialOffersF5() {
+		assertThat(checkout.checkout("FFFFFFFFF"), equalTo(60));
+	}
+	
+	@Test
+	public void testSpecialOffersF6() {
+		assertThat(checkout.checkout("FFFFFFFF"), equalTo(60));
 	}
 
 

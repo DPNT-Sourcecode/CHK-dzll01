@@ -26,16 +26,26 @@ public class CheckoutSolution {
         	total+=entry.getValue()%3*50;
         	total+=entry.getValue()/3*130;
         	}else {
-        	 if(entry.getValue()%5 >2)
-        		 total+=entry.getValue()/3*130;
+        		int remainder = entry.getValue().intValue()%5;
+        		if(remainder >2) {
+        		total+= remainder%3*50;
+             	total+= remainder/3*130; 
+        		} 
         	 else
-        	total+=entry.getValue()%5*50;
+        	   total+=entry.getValue()%5*50;
         	total+=entry.getValue()/5*200;
         	}
         	break;
         case "B" :
-        	total+=entry.getValue()%2*30;
-        	total+=entry.getValue()/2*45;
+        	int numItemE =0;
+        	// check if the number of item E is not a null  
+        	if(frenquencyChars.get("E")!=null)
+        		numItemE = frenquencyChars.get("E").intValue();
+        	// check if number if item B is more than discount E
+        	if(entry.getValue()> numItemE/2) {
+        	total+=(entry.getValue() - numItemE/2)%2*30;
+        	total+=(entry.getValue() - numItemE/2)/2*45;
+        	}
         	break;
         case "C" :
         	total+=entry.getValue()*20;
@@ -45,6 +55,11 @@ public class CheckoutSolution {
         	break;
         case "E" :
         	total+=entry.getValue()*40;
+        	break;
+        case "F" :
+        	int numItemF = entry.getValue().intValue();
+        	int discount = numItemF/3;
+        	total+=(numItemF - discount)*10;
         	break;
         default :
         	total =-1;
@@ -57,4 +72,3 @@ public class CheckoutSolution {
      return total;
   }
 }
-
