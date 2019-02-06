@@ -236,24 +236,34 @@ public class CheckoutSolutionTest {
 	}
 	
 	@Test
-	public void testSpecialOffersV1() {
-		assertThat(checkout.checkout("VV"), equalTo(90));
+	public void testSpecialOffersL1() {
+		assertThat(checkout.checkout("L"), equalTo(90));
 	}
 	@Test
-	public void testSpecialOffersV2() {
-		assertThat(checkout.checkout("VVV"), equalTo(130));
+	public void testSpecialOffersX1() {
+		assertThat(checkout.checkout("XX"), equalTo(180));
 	}
 	
 	@Test
-	public void testSpecialOffersV3() {
-		assertThat(checkout.checkout("VVVV"), equalTo(180));
+	public void testSpecialOffersD1() {
+		assertThat(checkout.checkout("DDD"), equalTo(45));
 	}
 	@Test
-	public void testSpecialOffersV4() {
-		assertThat(checkout.checkout("VVVVVV"), equalTo(260));
+	public void testSpecialOffersG1() {
+		assertThat(checkout.checkout("G"), equalTo(20));
+	}
+	
+	@Test
+	public void testSpecialOffersT1() {
+		assertThat(checkout.checkout("T"), equalTo(20));
+	}
+	@Test
+	public void testSpecialOffersW1() {
+		assertThat(checkout.checkout("W"), equalTo(20));
 	}
 
 }
+
 
 
 

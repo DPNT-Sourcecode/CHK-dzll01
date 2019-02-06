@@ -50,6 +50,8 @@ public class CheckoutSolution {
         	total+=entry.getValue()*20;
         	break;
         case "D" :
+        	total+=entry.getValue()*15;
+        	break;
         case "M" :
         	//total+=entry.getValue()*15;
         	numFitemDic=3;
@@ -189,6 +191,7 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
 
 
 
