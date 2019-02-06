@@ -114,7 +114,6 @@ public class CheckoutSolution {
         	total+=entry.getValue()*10;
         	break;
         case "P" :
-        	total+=entry.getValue()*50;
         	numFitemDic=5;
         	numSitemDic=0; 
         	numItem = entry.getValue().intValue();
@@ -169,6 +168,7 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
 
 
 
