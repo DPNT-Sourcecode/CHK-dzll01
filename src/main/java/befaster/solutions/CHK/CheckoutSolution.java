@@ -122,7 +122,7 @@ public class CheckoutSolution {
   }
     public Integer calculate(int numFitemDic,int numSitemDic, int numItem, int cost, int firstCostDisc, int secondCostDisc) {
     	int total = 0;
-    	if(numItem<numSitemDic) {
+    	if(numItem<numSitemDic || numSitemDic ==0 ) {
         	total+=numItem%numFitemDic*cost;
         	total+=numItem/numFitemDic*firstCostDisc;
         	}else {
@@ -138,6 +138,7 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
 
 
 
