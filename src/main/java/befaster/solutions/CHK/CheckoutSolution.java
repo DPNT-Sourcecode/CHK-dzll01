@@ -133,7 +133,6 @@ public class CheckoutSolution {
         	numItem = (entry.getValue().intValue() - numItemR);
         	numFitemDic=3;
         	numSitemDic=0; 
-        	numItem = entry.getValue().intValue();
         	cost=30; 
         	firstCostDisc=80;
         	secondCostDisc=0;
@@ -182,4 +181,5 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
 
