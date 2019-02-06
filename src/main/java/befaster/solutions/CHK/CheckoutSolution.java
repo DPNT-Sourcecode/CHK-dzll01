@@ -90,7 +90,6 @@ public class CheckoutSolution {
         	secondCostDisc=0;
         	total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
         	break;
-        	break;
         case "L" :
         case "X" :
         	total+=entry.getValue()*90;
@@ -151,6 +150,7 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
 
 
 
