@@ -169,7 +169,3 @@ public class CheckoutSolutionTest {
 	}
 
 }
-
-
-
-

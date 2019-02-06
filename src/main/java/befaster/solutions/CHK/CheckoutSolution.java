@@ -51,7 +51,7 @@ public class CheckoutSolution {
         	break;
         case "D" :
         case "M" :
-        	total+=entry.getValue()*15;
+        	//total+=entry.getValue()*15;
         	numFitemDic=3;
         	int numItemN =0;
         	// check if the number of item E is not a null  
@@ -61,7 +61,7 @@ public class CheckoutSolution {
         	
         	numSitemDic=0; 
         	numItem = (entry.getValue().intValue()- numItemN);
-        	cost=40; 
+        	cost=15; 
         	firstCostDisc=45;
         	secondCostDisc=0;
         	total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
@@ -163,8 +163,3 @@ public class CheckoutSolution {
     return total;	
     }
 }
-
-
-
-
-
