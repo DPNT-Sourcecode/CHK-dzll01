@@ -29,7 +29,7 @@ public class CheckoutSolution {
         	cost=50; 
         	firstCostDisc=130;
         	secondCostDisc=200;
-        	this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
+        	total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
         	break;
         case "B" :
         	int numItemE =0;
@@ -117,7 +117,7 @@ public class CheckoutSolution {
      return total;
   }
     public Integer calculate(int numFitemDic,int numSitemDic, int numItem, int cost, int firstCostDisc, int secondCostDisc) {
-    	int total =0;
+    	int total = 0;
     	if(numItem<numSitemDic) {
         	total+=numItem%numFitemDic*cost;
         	total+=numItem/numFitemDic*firstCostDisc;
@@ -134,4 +134,5 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
 
