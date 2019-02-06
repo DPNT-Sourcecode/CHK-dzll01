@@ -16,25 +16,20 @@ public class CheckoutSolution {
         		skus.split("")).collect(
         		Collectors.groupingBy(c -> c, Collectors.counting()));
         for(Entry<String,Long> entry : frenquencyChars.entrySet()) {
+        	int numFitemDic, numSitemDic,  numItem, cost,firstCostDisc,secondCostDisc;
         		
         switch (entry.getKey()) {
         case "" :
         	total=0;
         	break;
         case "A" :
-        	if(entry.getValue()<5) {
-        	total+=entry.getValue()%3*50;
-        	total+=entry.getValue()/3*130;
-        	}else {
-        		int remainder = entry.getValue().intValue()%5;
-        		if(remainder >2) {
-        		total+= remainder%3*50;
-             	total+= remainder/3*130; 
-        		} 
-        	 else
-        	   total+=entry.getValue()%5*50;
-        	total+=entry.getValue()/5*200;
-        	}
+        	numFitemDic=3;
+        	numSitemDic=5; 
+        	numItem = entry.getValue().intValue();
+        	cost=50; 
+        	firstCostDisc=130;
+        	secondCostDisc=200;
+        	this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
         	break;
         case "B" :
         	int numItemE =0;
@@ -51,6 +46,7 @@ public class CheckoutSolution {
         	total+=entry.getValue()*20;
         	break;
         case "D" :
+        case "M" :
         	total+=entry.getValue()*15;
         	break;
         case "E" :
@@ -60,6 +56,55 @@ public class CheckoutSolution {
         	int numItemF = entry.getValue().intValue();
         	int discount = numItemF/3;
         	total+=(numItemF - discount)*10;
+        	break;
+        case "G" :
+        case "T" :
+        case "W" :
+        	total+=entry.getValue()*20;
+        	break;
+        case "H" :
+        	total+=entry.getValue()*80;
+        	break;
+        case "I" :
+        	total+=entry.getValue()*35;
+        	break;
+        case "J" :
+        	total+=entry.getValue()*60;
+        	break;
+        case "K" :
+        	total+=entry.getValue()*80;
+        	break;
+        case "L" :
+        case "X" :
+        	total+=entry.getValue()*90;
+        	break;
+        case "N" :
+        	total+=entry.getValue()*40;
+        	break;
+        case "O" :
+        case "Y" :
+        	total+=entry.getValue()*10;
+        	break;
+        case "P" :
+        	total+=entry.getValue()*50;
+        	break;
+        case "Q" :
+        	total+=entry.getValue()*30;
+        	break;
+        case "R" :
+        	total+=entry.getValue()*50;
+        	break;
+        case "S" :
+        	total+=entry.getValue()*30;
+        	break;
+        case "U" :
+        	total+=entry.getValue()*40;
+        	break;
+        case "V" :
+        	total+=entry.getValue()*50;
+        	break;
+        case "Z" :
+        	total+=entry.getValue()*50;
         	break;
         default :
         	total =-1;
@@ -71,4 +116,22 @@ public class CheckoutSolution {
     }
      return total;
   }
+    public Integer calculate(int numFitemDic,int numSitemDic, int numItem, int cost, int firstCostDisc, int secondCostDisc) {
+    	int total =0;
+    	if(numItem<numSitemDic) {
+        	total+=numItem%numFitemDic*cost;
+        	total+=numItem/numFitemDic*firstCostDisc;
+        	}else {
+        		int remainder = numItem%numSitemDic;
+        		if(remainder >=numFitemDic) {
+        		total+= remainder%numFitemDic*cost;
+             	total+= remainder/numFitemDic*firstCostDisc; 
+        		} 
+        	 else
+        	   total+=numItem%numSitemDic*cost;
+        	total+=numItem/numSitemDic*secondCostDisc;
+        	}
+    return total;	
+    }
 }
+
