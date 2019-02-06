@@ -146,11 +146,17 @@ public class CheckoutSolution {
         	break;
         case "U" :
         	int numItemU = entry.getValue().intValue();
-        	int disc = numItemU/3;
+        	int disc = numItemU/4;
         	total+=(numItemU - disc)*40;
         	break;
         case "V" :
-        	total+=entry.getValue()*50;
+        	numFitemDic=2;
+        	numSitemDic=3; 
+        	numItem = entry.getValue().intValue();
+        	cost=50; 
+        	firstCostDisc=90;
+        	secondCostDisc=130;
+        	total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
         	break;
         case "Z" :
         	total+=entry.getValue()*50;
@@ -183,6 +189,7 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
 
 
 
