@@ -42,7 +42,7 @@ public class CheckoutSolution {
         	numSitemDic=0; 
         	numItem = (entry.getValue().intValue()- numItemE);
         	cost=30; 
-        	firstCostDisc=0;
+        	firstCostDisc=45;
         	secondCostDisc=0;
         	total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
         	break;
@@ -62,7 +62,7 @@ public class CheckoutSolution {
         	numSitemDic=0; 
         	numItem = (entry.getValue().intValue()- numItemN);
         	cost=15; 
-        	firstCostDisc=45;
+        	firstCostDisc=0;
         	secondCostDisc=0;
         	total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
         	break;
@@ -163,3 +163,4 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
