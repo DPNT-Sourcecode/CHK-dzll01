@@ -41,7 +41,7 @@ public class CheckoutSolutionTest {
 	
 	@Test
 	public void testIllegalInput1() {
-		assertThat(checkout.checkout("T"), equalTo(-1));
+		assertThat(checkout.checkout("8907"), equalTo(-1));
 	}
 	
 	@Test
@@ -118,3 +118,4 @@ public class CheckoutSolutionTest {
 
 
 }
+
