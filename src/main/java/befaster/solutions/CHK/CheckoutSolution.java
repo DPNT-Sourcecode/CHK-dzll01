@@ -145,7 +145,9 @@ public class CheckoutSolution {
         	total+=entry.getValue()*30;
         	break;
         case "U" :
-        	total+=entry.getValue()*40;
+        	int numItemU = entry.getValue().intValue();
+        	int disc = numItemU/3;
+        	total+=(numItemU - disc)*40;
         	break;
         case "V" :
         	total+=entry.getValue()*50;
@@ -181,5 +183,6 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
 
 
