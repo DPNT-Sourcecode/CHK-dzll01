@@ -263,8 +263,3 @@ public class CheckoutSolutionTest {
 	}
 
 }
-
-
-
-
-
