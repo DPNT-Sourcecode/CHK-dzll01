@@ -59,14 +59,7 @@ public class CheckoutSolution {
         case "F" :
         	int numItemF = entry.getValue().intValue();
         	int discount = numItemF/3;
-        	//total+=(numItemF - discount)*10;
-        	numFitemDic=3;
-        	numSitemDic=0; 
-        	numItem = (entry.getValue().intValue() - discount) ;
-        	cost=10; 
-        	firstCostDisc=0;
-        	secondCostDisc=0;
-        	total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
+        	total+=(numItemF - discount)*10;
         	break;
         case "G" :
         case "T" :
@@ -74,17 +67,13 @@ public class CheckoutSolution {
         	total+=entry.getValue()*20;
         	break;
         case "H" :
-        	total+=entry.getValue()*80;
-        	//int numItemF = entry.getValue().intValue();
-        	//int discount = numItemF/3;
-        	//total+=(numItemF - discount)*10;
-        	numFitemDic=3;
-        	numSitemDic=0; 
-        	//numItem = (entry.getValue().intValue() - discount) ;
-        	cost=10; 
-        	firstCostDisc=0;
-        	secondCostDisc=0;
-        	//total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
+        	numFitemDic=5;
+        	numSitemDic=10; 
+        	numItem = entry.getValue().intValue();
+        	cost=50; 
+        	firstCostDisc=45;
+        	secondCostDisc=80;
+        	total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
         	break;
         case "I" :
         	total+=entry.getValue()*35;
@@ -155,3 +144,4 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
