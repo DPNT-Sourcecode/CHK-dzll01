@@ -54,13 +54,12 @@ public class CheckoutSolution {
         	//total+=entry.getValue()*15;
         	numFitemDic=3;
         	int numItemN =0;
-        	// check if the number of item E is not a null  
+        	// check if the number of item N is not a null  
         	if(frenquencyChars.get("N")!=null)
-        		numItemE = frenquencyChars.get("N").intValue()/numFitemDic;
-        	// check if number if item B is more than discount E
-        	
+        		numItemN = frenquencyChars.get("N").intValue()/numFitemDic;
+        	// check if number if item N is more than discount E
         	numSitemDic=0; 
-        	numItem = (entry.getValue().intValue()- numItemN);
+        	numItem = (entry.getValue().intValue() - numItemN);
         	cost=15; 
         	firstCostDisc=0;
         	secondCostDisc=0;
@@ -163,4 +162,5 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
 
