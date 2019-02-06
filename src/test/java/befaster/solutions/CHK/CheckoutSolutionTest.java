@@ -177,6 +177,15 @@ public class CheckoutSolutionTest {
 	public void testSpecialOffersP2() {
 		assertThat(checkout.checkout("PPPPPP"), equalTo(250));
 	}
+	
+	@Test
+	public void testSpecialOffersQ() {
+		assertThat(checkout.checkout("QQQ"), equalTo(80));
+	}
+	
+	@Test
+	public void testSpecialOffersQ2() {
+		assertThat(checkout.checkout("QQQQ"), equalTo(110));
+	}
 
 }
-
