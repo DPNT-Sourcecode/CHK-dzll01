@@ -82,7 +82,14 @@ public class CheckoutSolution {
         	total+=entry.getValue()*60;
         	break;
         case "K" :
-        	total+=entry.getValue()*80;
+        	numFitemDic=2;
+        	numSitemDic=0; 
+        	numItem = entry.getValue().intValue();
+        	cost=80; 
+        	firstCostDisc=150;
+        	secondCostDisc=0;
+        	total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
+        	break;
         	break;
         case "L" :
         case "X" :
@@ -144,5 +151,6 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
 
 
