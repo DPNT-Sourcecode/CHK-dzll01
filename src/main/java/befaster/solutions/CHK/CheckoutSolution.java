@@ -60,6 +60,13 @@ public class CheckoutSolution {
         	int numItemF = entry.getValue().intValue();
         	int discount = numItemF/3;
         	total+=(numItemF - discount)*10;
+        	numFitemDic=3;
+        	numSitemDic=0; 
+        	numItem = (entry.getValue().intValue() - discount) ;
+        	cost=10; 
+        	firstCostDisc=0;
+        	secondCostDisc=0;
+        	total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
         	break;
         case "G" :
         case "T" :
@@ -138,6 +145,7 @@ public class CheckoutSolution {
     return total;	
     }
 }
+
 
 
 
