@@ -15,6 +15,17 @@ public class CheckoutSolution {
         Map<String, Long> frenquencyChars = Arrays.stream(
         		skus.split("")).collect(
         		Collectors.groupingBy(c -> c, Collectors.counting()));
+        
+        // calculate  the total sum of STXYZ in the map
+        Long sum = frenquencyChars
+        		.entrySet()
+        		.stream()
+        		.filter(entry -> entry.getKey().matches("S|T|X|Y|Z"))
+        		.mapToLong(entry -> Math.min(entry.getValue(), 1000))
+        		.sum();
+        int buyAny3group = sum.intValue();
+        int remainder = buyAny3group%3;
+        
         for(Entry<String,Long> entry : frenquencyChars.entrySet()) {
         	int numFitemDic, numSitemDic,  numItem, cost,firstCostDisc,secondCostDisc;
         		
@@ -76,7 +87,6 @@ public class CheckoutSolution {
         	total+=(numItemF - discount)*10;
         	break;
         case "G" :
-        case "T" :
         case "W" :
         	total+=entry.getValue()*20;
         	break;
@@ -99,20 +109,18 @@ public class CheckoutSolution {
         	numFitemDic=2;
         	numSitemDic=0; 
         	numItem = entry.getValue().intValue();
-        	cost=80; 
-        	firstCostDisc=150;
+        	cost=70; 
+        	firstCostDisc=120;
         	secondCostDisc=0;
         	total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
         	break;
         case "L" :
-        case "X" :
         	total+=entry.getValue()*90;
         	break;
         case "N" :
         	total+=entry.getValue()*40;
         	break;
         case "O" :
-        case "Y" :
         	total+=entry.getValue()*10;
         	break;
         case "P" :
@@ -144,7 +152,36 @@ public class CheckoutSolution {
         	total+=entry.getValue()*50;
         	break;
         case "S" :
-        	total+=entry.getValue()*30;
+        case "T" :
+        case "Y" :
+        	int numItemX =0;
+        	// check if the number of item X is not a null  
+        	if(frenquencyChars.get("X")!=null)
+        		numItemX = frenquencyChars.get("X").intValue();
+        	numItem = entry.getValue().intValue();
+        	if(buyAny3group >= 3) {
+        		total += buyAny3group/3*45;
+        		buyAny3group =0;
+        	}else if(buyAny3group > 0)
+        		total+=numItem*20;
+        	if(buyAny3group ==0) {
+        		if(numItemX >0 && !(entry.getKey().equals("Y")) ) {
+        			if(remainder > 0 && numItemX >= remainder ) {
+    	        		total+=remainder*17;
+    	        		remainder =0;
+    	        	}else if(numItemX < remainder) {
+    	        		total+=numItemX*17;
+    	        		remainder = remainder - numItemX;
+    	        	}
+        		}
+	        	if(remainder > 0 && numItem >= remainder ) {
+	        		total+=remainder*20;
+	        		remainder =0;
+	        	}else if(numItem < remainder) {
+	        		total+=numItem*20;
+	        		remainder = remainder - numItem;
+	        	}
+        	}	
         	break;
         case "U" :
         	int numItemU = entry.getValue().intValue();
@@ -160,8 +197,39 @@ public class CheckoutSolution {
         	secondCostDisc=130;
         	total+=this.calculate(numFitemDic, numSitemDic, numItem, cost, firstCostDisc, secondCostDisc);
         	break;
+        case "X" :
+        	numItem = entry.getValue().intValue();
+        	if(buyAny3group >= 3) {
+        		total += buyAny3group/3*45;
+        		buyAny3group =0;
+        	}else if(buyAny3group > 0)
+        		total+=numItem*17;
+        	if(buyAny3group ==0) {
+        	if(remainder > 0 && numItem >= remainder ) {
+        		total+=remainder*17;
+        		remainder =0;
+        	}else if(numItem < remainder) {
+        		total+=numItem*17;
+        		remainder = remainder - numItem;
+        	}
+        	}
+        	break;
         case "Z" :
-        	total+=entry.getValue()*50;
+        	numItem = entry.getValue().intValue();
+        	if(buyAny3group >= 3) {
+        		total += buyAny3group/3*45;
+        		buyAny3group =0;
+        	}else if(buyAny3group > 0)
+        		total+=numItem*21;
+        	if(buyAny3group ==0) {
+        	if(remainder > 0 && numItem >= remainder ) {
+        		total+=remainder*21;
+        		remainder =0;
+        	}else if(numItem < remainder) {
+        		total+=numItem*21;
+        		remainder = remainder - numItem;
+        	}
+        	}
         	break;
         default :
         	total =-1;

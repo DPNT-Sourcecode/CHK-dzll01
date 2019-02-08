@@ -138,19 +138,19 @@ public class CheckoutSolutionTest {
 	}
 	@Test
 	public void testSpecialOffersK1() {
-		assertThat(checkout.checkout("KKK"), equalTo(230));
+		assertThat(checkout.checkout("KKK"), equalTo(190));
 	}
 	@Test
 	public void testSpecialOffersK2() {
-		assertThat(checkout.checkout("KKKK"), equalTo(300));
+		assertThat(checkout.checkout("KKKK"), equalTo(240));
 	}
 	@Test
 	public void testSpecialOffersK3() {
-		assertThat(checkout.checkout("KK"), equalTo(150));
+		assertThat(checkout.checkout("KK"), equalTo(120));
 	}
 	@Test
 	public void testSpecialOffersK4() {
-		assertThat(checkout.checkout("KKKKK"), equalTo(380));
+		assertThat(checkout.checkout("KKKKK"), equalTo(310));
 	}
 	
 	@Test
@@ -225,10 +225,7 @@ public class CheckoutSolutionTest {
 	public void testSpecialOffersV3() {
 		assertThat(checkout.checkout("VVVV"), equalTo(180));
 	}
-	@Test
-	public void testSpecialOffersY1() {
-		assertThat(checkout.checkout("YY"), equalTo(20));
-	}
+	
 	
 	@Test
 	public void testSpecialOffersO1() {
@@ -238,10 +235,6 @@ public class CheckoutSolutionTest {
 	@Test
 	public void testSpecialOffersL1() {
 		assertThat(checkout.checkout("L"), equalTo(90));
-	}
-	@Test
-	public void testSpecialOffersX1() {
-		assertThat(checkout.checkout("XX"), equalTo(180));
 	}
 	
 	@Test
@@ -260,6 +253,40 @@ public class CheckoutSolutionTest {
 	@Test
 	public void testSpecialOffersW1() {
 		assertThat(checkout.checkout("W"), equalTo(20));
+	}
+	@Test
+	public void testSpecialOffersX1() {
+		assertThat(checkout.checkout("XX"), equalTo(34));
+	}
+	
+	@Test
+	public void testSpecialOffersY1() {
+		assertThat(checkout.checkout("YY"), equalTo(40));
+	}
+	
+	@Test
+	public void testSpecialOffersgroupOffer1() {
+		assertThat(checkout.checkout("XYZ"), equalTo(45));
+	}
+	
+	@Test
+	public void testSpecialOffersgroupOffer2() {
+		assertThat(checkout.checkout("STXS"), equalTo(62));
+	}
+	
+	@Test
+	public void testSpecialOffersgroupOffer3() {
+		assertThat(checkout.checkout("STXZ"), equalTo(62));
+	}
+	
+	@Test
+	public void testSpecialOffersgroupOffer4() {
+		assertThat(checkout.checkout("CXYZYZC"), equalTo(122));
+	}
+	
+	@Test
+	public void testSpecialOffersAll() {
+		assertThat(checkout.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), equalTo(1602));
 	}
 
 }
